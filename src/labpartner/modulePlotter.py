@@ -44,12 +44,12 @@ class plotter:
         -----
         To use this software, run the following command:
         import labpartner as lp
-        lp.plotter.plot(x, y, yerr=None, xlabel="x axis", ylabel="y axis", title=None, label="data", fit=None, figsize=(4, 3))
+        lp.plotter.plot(x, y, yerr, xlabel="x axis", ylabel="y axis", title=None, label="data", fit=None, figsize=(4, 3))
 
         Example
         -------
         import labpartner as lp
-        lp.plotter.plot([1, 2, 3], [4, 5, 6])
+        lp.plotter.plot([1, 2, 3], [4, 5, 6], [0.2, 0.2, 0.3])
 
         Returns
         -------
