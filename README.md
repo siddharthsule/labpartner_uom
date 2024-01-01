@@ -96,7 +96,7 @@ In VS Code, you can go to File -> Preferences -> Settings, type "Python Formatti
 
 ### Write your package
 
-In **src/labpartner/** (`labpartner` should have been replaced by your module name) folder, rename **module1.py** and write your code in it. Add more module .py files if you need to.
+In **src/labpartner/** (`labpartner` should have been replaced by your module name) folder, rename **moduleErrorProp.py** and write your code in it. Add more module .py files if you need to.
 
 ### Write your tests
 
