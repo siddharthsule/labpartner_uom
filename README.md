@@ -31,7 +31,7 @@ The code is based on Numpy, Sympy and Matplotlib. Try to have your x, y and y er
 import labpartner as lp
 prop = lp.errorpropagator.propagate_error(func, vars)
 
-#Example
+# Example
 prop = lp.errorpropagator.propagate_error("A*x**2 + B*y + C", ["x", "y"])
 ```
 
@@ -43,7 +43,7 @@ fit = lp.linfit.do_linear_fit(x, y, yerr)
 fit = lp.quadfit.do_quadratic_fit(x, y, yerr)
 
 
-#Example
+# Example
 fit = lp.linfit.do_linear_fit([1, 2, 3], [4, 5, 6], [0.2, 0.2, 0.3])
 fit = lp.quadfit.do_quadratic_fit([1, 2, 3], [4, 5, 6], [0.2, 0.2, 0.3])
 ```
@@ -54,9 +54,7 @@ fit = lp.quadfit.do_quadratic_fit([1, 2, 3], [4, 5, 6], [0.2, 0.2, 0.3])
 import labpartner as lp
 lp.plotter.plot(x, y, yerr=None, xlabel="x axis", ylabel="y axis", title=None, label="data", fit=None, figsize=(4, 3))
 
-Example
--------
-import labpartner as lp
+# Example
 lp.plotter.plot([1, 2, 3], [4, 5, 6], [0.2, 0.2, 0.3])
 ```
 
