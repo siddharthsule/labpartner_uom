@@ -1,10 +1,10 @@
-# Example PyPI (Python Package Index) Package
-
 import sympy as sp
 
-class ErrorPropagator(object):
 
-    def propagate_error(self, func, vars):
+class errorpropagator:
+
+    @staticmethod
+    def propagate_error(func, vars):
 
         # func: Function f(x, y, z, ...)
         # vars: List of variables, like x or t
@@ -43,8 +43,8 @@ class ErrorPropagator(object):
 
         return output
 
-    @classmethod
-    def print_help(cls):
+    @staticmethod
+    def print_help():
 
         startup_info = """
         Error Propagation Tool
@@ -52,6 +52,20 @@ class ErrorPropagator(object):
         This software uses the SymPy module to symbolically
         differentiate functions to derive the for the error
         on the dependant variable.
+
+        Usage
+        -----
+        To use this software, run the following command:
+        import labpartner as lp
+        lp.errorpropagator.propagate_error(func, vars)
+
+        Where func is the function you wish to differentiate
+        and vars is a list of variables in the function.
+
+        Example
+        -------
+        import labpartner as lp
+        prop = lp.errorpropagator.propagate_error("x**2 * y", ["x", "y"])
 
         Inputting Common Functions
         --------------------------
