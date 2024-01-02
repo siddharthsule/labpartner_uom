@@ -1,5 +1,7 @@
+import re
 import numpy as np
-
+import sympy as sp
+from scipy.optimize import curve_fit
 
 class linfit:
 
@@ -132,5 +134,84 @@ class quadfit:
         b_err: Error on the coefficient of x
         c: Constant term
         c_err: Error on the constant term
+        rcs: Reduced chi-squared value
+        """
+
+class fit:
+
+    @staticmethod
+    def calculate_chi_squared(x, y, yerr, func, popt):
+        chi_squared = 0
+        for i in range(len(x)):
+            chi_squared += ((y[i] - func(x[i], *popt)) / yerr[i]) ** 2
+        return chi_squared
+
+    @staticmethod
+    def calculate_reduced_chi_squared(x, y, yerr, func, popt):
+        chi_squared = fit.calculate_chi_squared(x, y, yerr, func, popt)
+        return chi_squared / (len(x) - len(popt))
+
+    @staticmethod
+    def do_fit(x, y, func_text, p0=None, yerr=None, no_yerr=False):
+
+        if no_yerr:
+            yerr = np.ones(len(y))
+
+        # Extract parameter names from func_text
+        params = re.findall(r'\b[a-z]\b', func_text)
+
+        # Remove 'x' from params if it's there
+        params = [p for p in params if p != 'x']
+
+        # Create symbols for x and the parameters
+        sym = sp.symbols(' '.join(['x'] + params))
+
+        # Create the function
+        func = sp.lambdify(sym, func_text, 'numpy')
+
+        # Create a wrapper function for curve_fit
+        def func_wrapper(x, *params):
+            return func(x, *params)
+
+        if p0 == None:
+            p0 = np.ones(len(params))
+
+        # Perform the fit
+        popt, pcov = curve_fit(func_wrapper, x, y, p0=p0, sigma=yerr)
+
+        # Get errors from pcov
+        perr = np.sqrt(np.diag(pcov))
+
+        # Calculate reduced chi-squared
+        rcs = fit.calculate_reduced_chi_squared(x, y, yerr, func, popt)
+
+        output = [popt, perr, rcs]
+        return output
+
+    @staticmethod
+    def print_help():
+
+        startup_info = """
+        Fit Tool
+        --------
+        This software uses the SciPy module to perform a fit
+        on a set of data points.
+
+        Usage
+        -----
+        To use this software, run the following command:
+        import labpartner as lp
+        fit = lp.fit.do_fit(x, y, func, p0, yerr=yerr)
+
+        Example
+        -------
+        import labpartner as lp
+        fit = lp.fit.do_fit([1, 2, 3], [4, 5, 6], lambda x, a, b: a * x + b, [1, 1])
+
+        Returns
+        -------
+        fit: List containing the following elements:
+        popt: List of best-fit parameters
+        pcov: Covariance matrix
         rcs: Reduced chi-squared value
         """

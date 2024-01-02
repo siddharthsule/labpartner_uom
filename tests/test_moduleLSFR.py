@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from labpartner.moduleLSFR import linfit, quadfit
+from labpartner.moduleLSFR import linfit, quadfit, fit
 
 
 class Testlinfit(unittest.TestCase):
@@ -68,6 +68,24 @@ class Testquadfit(unittest.TestCase):
         self.assertAlmostEqual(output[2], 0, places=1)
         self.assertAlmostEqual(output[4], 0, places=1)
 
+
+class TestFit(unittest.TestCase):
+
+    def test_do_fit(self):
+        my_func = "a * sin(x) + b"
+        x = [1, 2, 3]
+        y = [4, 5, 6]
+        p0 = [1, 1]
+        yerr = [1, 1, 1]
+        expected_result = [np.array([-1.93611801,  6.22097308]), np.array([1.33433151, 0.96059825]), 0.6440378595120685]
+
+        result = fit.do_fit(x, y, my_func, p0, yerr=yerr)
+
+        for i in range(len(result)):
+            np.testing.assert_allclose(result[i], expected_result[i], rtol=1e-5)
+
+if __name__ == '__main__':
+    unittest.main()
 
 if __name__ == '__main__':
     unittest.main()

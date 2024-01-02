@@ -8,7 +8,7 @@ Over the course of my undergraduate studies at the University of Manchester, UK,
 
 This Python is Package can:
 - Propagate Errors for any Function
-- Apply Linear and Quadratic Fits to a set of Data
+- Apply ~Linear and Quadratic~ ANY fit to a set of Data
 - Plot Results in the style of Lab Reports
 
 It is important to acknowledge that there are other very useful tools (OriginPro, LSFR, your own code). I just wanted to try making something that works as an all-in-one system, effectively acting as a Lab Partner!
@@ -35,7 +35,18 @@ prop = lp.errorpropagator.propagate_error(func, vars)
 prop = lp.errorpropagator.propagate_error("A*x**2 + B*y + C", ["x", "y"])
 ```
 
-### Linear and Quadratic Fit
+### Function Fitting
+
+```python
+import labpartner as lp
+fit = lp.fit.do_fit(lp.fit.do_fit(x, y, func, p0=p0, yerr=yerr)
+
+# Example
+my_func = "a * sin(x) + b"
+fit = lp.fit.do_fit([1, 2, 3], [4, 5, 6], my_func, p0=[1, 1], yerr=[1, 1, 1])
+```
+
+### (OLD) Linear and Quadratic Fit
 
 ```python
 import labpartner as lp
@@ -52,7 +63,7 @@ fit = lp.quadfit.do_quadratic_fit([1, 2, 3], [4, 5, 6], [0.2, 0.2, 0.3])
 
 ```python
 import labpartner as lp
-lp.plotter.plot(x, y, yerr=None, xlabel="x axis", ylabel="y axis", title=None, label="data", fit=None, figsize=(4, 3))
+lp.plotter.plot(x, y, yerr=None, xlabel="x axis", ylabel="y axis", title=None, label="data", fit_type=None, figsize=(4, 3))
 
 # Example
 lp.plotter.plot([1, 2, 3], [4, 5, 6], [0.2, 0.2, 0.3])

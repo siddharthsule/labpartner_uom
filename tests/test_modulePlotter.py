@@ -13,7 +13,7 @@ class TestPlotter(unittest.TestCase):
         yerr = np.array([0.1, 0.2, 0.3])
 
         # Call the plot method
-        plotter.plot(x, y, yerr, fit="lin")
+        plotter.plot(x, y, yerr, fit_type="lin")
 
         # Check if the file was created
         self.assertTrue(os.path.exists('myplot.png'))
