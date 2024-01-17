@@ -28,6 +28,8 @@ The code is based on Numpy, Sympy and Matplotlib. Try to have your x, y and y er
 
 ### Error Propagation
 
+To propagate errors, simply write up the function and the variables which have uncertainties.
+
 ```python
 import labpartner_uom as lp
 prop = lp.errorpropagator.propagate_error(func, vars)
@@ -35,6 +37,21 @@ prop = lp.errorpropagator.propagate_error(func, vars)
 # Example
 prop = lp.errorpropagator.propagate_error("A*x**2 + B*y + C", ["x", "y"])
 ```
+
+### Data Analysis
+
+There are a few presets which allow you to auto-analyse your results.
+
+```python
+import labpartner_uom as lp
+lp.analyse(x, y, yerr, fit="Linear")
+```
+
+This should print the results of the fitting, as well save a .png and .pdf of the plot.
+
+Options of fits include: Linear, Quadratic, Gaussian, Exponential, Logarithmic, Sine, Cosine and more! You can also add your own functions to fit (see below for details)
+
+## Advanced Options - For those who want more Customisation
 
 ### Function Fitting
 

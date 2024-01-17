@@ -57,17 +57,26 @@ class plotter:
             # ----------------------------------------------------------
 
             ax.plot(x, func_wrapper(x, *fit_res[0]), label='Fit:' + fit_type)
-            rcs = fit_res[2]
+
+            print("----------------------------------------")
+            print("Fit Results")
+            print("Fit = " + fit_type)
+            print("Fit Parameters = " + params)
+            print("Fit Parameter Values = " + fit_res[0])
+            print("Fit Parameter Errors = " + fit_res[1])
+            print("Reduced Chi-Squared = " + fit_res[2])
+            print("----------------------------------------")
+
+
+
 
         ax.legend(loc='best')
 
         fig.tight_layout()
         fig.savefig('myplot.png', dpi=300)
         fig.savefig('myplot.pdf')
-        print("---------------------------------------")
-        print("Plot saved as myplot.png and myplot.pdf")
-        print("Reduced Chi Squared: " + str(rcs))
-        print("---------------------------------------")
+        print("Plot saved as myplot.png and myplot.pdf!")
+        print("----------------------------------------")
 
     @staticmethod
     def print_help():
