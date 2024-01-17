@@ -1,6 +1,5 @@
 from .modulePlotter import *
 
-@staticmethod
 def analyse(x, y, yerr, fit=None, *args, **kwargs):
 
     if fit=="Linear":
