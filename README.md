@@ -1,6 +1,6 @@
 # LabPartner - A Tool for Undergraduate Physics Students
 
-[![PyPI package](https://img.shields.io/badge/pip%20install-labpartner_uom-brightgreen)](https://pypi.org/project/labpartner_uom/) [![version number](https://img.shields.io/pypi/v/example-pypi-package?color=green&label=version)](https://github.com/SiddharthSule/labpartner_uom/releases) [![Actions Status](https://github.com/SiddharthSule/labpartner_uom/workflows/Test/badge.svg)](https://github.com/SiddharthSule/labpartner_uom/actions) [![License](https://img.shields.io/github/license/SiddharthSule/labpartner_uom)](https://github.com/SiddharthSule/labpartner_uom/blob/main/LICENSE)
+[![PyPI package](https://img.shields.io/badge/pip%20install-labpartner_uom-brightgreen)](https://pypi.org/project/labpartner_uom/) [![version number](https://img.shields.io/pypi/v/labpartner_uom?color=green&label=version)](https://github.com/SiddharthSule/labpartner_uom/releases) [![Actions Status](https://github.com/SiddharthSule/labpartner_uom/workflows/Test/badge.svg)](https://github.com/SiddharthSule/labpartner_uom/actions) [![License](https://img.shields.io/github/license/SiddharthSule/labpartner_uom)](https://github.com/SiddharthSule/labpartner_uom/blob/main/LICENSE)
 
 Struggling with Lab? Me too!
 
