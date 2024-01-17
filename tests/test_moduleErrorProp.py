@@ -52,6 +52,5 @@ class TestErrorProp(unittest.TestCase):
             "Δf = tan(x)**2 + 1 Δx"
         )
 
-
 if __name__ == '__main__':
     unittest.main()

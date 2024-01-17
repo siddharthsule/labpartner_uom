@@ -62,6 +62,10 @@ class plotter:
         fig.tight_layout()
         fig.savefig('myplot.png', dpi=300)
         fig.savefig('myplot.pdf')
+        print("---------------------------------------")
+        print("Plot saved as myplot.png and myplot.pdf")
+        print("Reduced Chi Squared: " + str(fit_res[2]))
+        print("---------------------------------------")
 
     @staticmethod
     def print_help():
