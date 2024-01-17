@@ -15,11 +15,12 @@ It is important to acknowledge that there are other very useful tools (OriginPro
 
 ## Installation
 
-This should be working in a few weeks time. To install this package, simply type:
+To install this package, simply type:
 
 ```bash
 pip install labpartner_uom
 ```
+PyPI might use labpartner-uom, but this command does the same. Someday I hope to remove the '_uom'!
 
 ## Usage
 
