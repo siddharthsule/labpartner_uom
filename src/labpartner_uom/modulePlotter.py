@@ -7,6 +7,7 @@ class plotter:
     @staticmethod
     def plot(x, y, yerr, xlabel="x axis", ylabel="y axis", title=None, label="data", fit_type=None, p0=None, figsize=(4, 3)):
 
+        rcs = 0
         fig, ax = plt.subplots(1, 1, figsize=figsize)
 
         ax.errorbar(x, y, yerr=yerr, fmt='.', capsize=4, label=label)
@@ -56,6 +57,7 @@ class plotter:
             # ----------------------------------------------------------
 
             ax.plot(x, func_wrapper(x, *fit_res[0]), label='Fit:' + fit_type)
+            rcs = fit_res[2]
 
         ax.legend(loc='best')
 
@@ -64,7 +66,7 @@ class plotter:
         fig.savefig('myplot.pdf')
         print("---------------------------------------")
         print("Plot saved as myplot.png and myplot.pdf")
-        print("Reduced Chi Squared: " + str(fit_res[2]))
+        print("Reduced Chi Squared: " + str(rcs))
         print("---------------------------------------")
 
     @staticmethod
