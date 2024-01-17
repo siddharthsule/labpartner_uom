@@ -1,4 +1,4 @@
 include pyproject.toml
-include *.md
+include README.md
 include LICENSE
 recursive-include tests test*.py
