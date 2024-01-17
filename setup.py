@@ -4,7 +4,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='labpartner',
+    name='labpartner_uom',
     author='Siddharth Sule',
     author_email='siddharth.sule@manchester.ac.uk',
     description='Example PyPI (Python Package Index) Package',
@@ -13,10 +13,10 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     url='https://github.com/SiddharthSule/labpartner',
     project_urls={
-        'Documentation': 'https://github.com/SiddharthSule/labpartner',
+        'Documentation': 'https://github.com/SiddharthSule/labpartner_uom',
         'Bug Reports':
-        'https://github.com/SiddharthSule/labpartner/issues',
-        'Source Code': 'https://github.com/SiddharthSule/labpartner',
+        'https://github.com/SiddharthSule/labpartner_uom/issues',
+        'Source Code': 'https://github.com/SiddharthSule/labpartner_uom',
         # 'Funding': '',
         # 'Say Thanks!': '',
     },
