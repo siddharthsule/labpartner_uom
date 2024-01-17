@@ -56,7 +56,7 @@ class errorpropagator:
         Usage
         -----
         To use this software, run the following command:
-        import labpartner as lp
+        import labpartner_uom as lp
         lp.errorpropagator.propagate_error(func, vars)
 
         Where func is the function you wish to differentiate
@@ -64,7 +64,7 @@ class errorpropagator:
 
         Example
         -------
-        import labpartner as lp
+        import labpartner_uom as lp
         prop = lp.errorpropagator.propagate_error("x**2 * y", ["x", "y"])
 
         Inputting Common Functions

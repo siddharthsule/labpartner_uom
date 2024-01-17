@@ -11,7 +11,7 @@ setuptools.setup(
     keywords='example, pypi, package',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/SiddharthSule/labpartner',
+    url='https://github.com/SiddharthSule/labpartner_uom',
     project_urls={
         'Documentation': 'https://github.com/SiddharthSule/labpartner_uom',
         'Bug Reports':
@@ -46,8 +46,8 @@ setuptools.setup(
     },
     # entry_points={
     #     'console_scripts': [  # This can provide executable scripts
-    #         'run=labpartner:main',
-    # You can execute `run` in bash to run `main()` in src/labpartner/__init__.py
+    #         'run=labpartner_uom:main',
+    # You can execute `run` in bash to run `main()` in src/labpartner_uom/__init__.py
     #     ],
     # },
 )

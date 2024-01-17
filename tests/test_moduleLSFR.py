@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from labpartner.moduleLSFR import linfit, quadfit, fit
+from labpartner_uom.moduleLSFR import linfit, quadfit, fit
 
 
 class Testlinfit(unittest.TestCase):

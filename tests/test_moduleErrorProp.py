@@ -1,6 +1,6 @@
 import unittest
 
-from labpartner.moduleErrorProp import errorpropagator
+from labpartner_uom.moduleErrorProp import errorpropagator
 
 
 class TestErrorProp(unittest.TestCase):

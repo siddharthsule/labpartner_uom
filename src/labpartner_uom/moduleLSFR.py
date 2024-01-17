@@ -48,12 +48,12 @@ class linfit:
         Usage
         -----
         To use this software, run the following command:
-        import labpartner as lp
+        import labpartner_uom as lp
         fit = lp.linfit.do_linear_fit(x, y, yerr=None, no_yerr=False)
 
         Example
         -------
-        import labpartner as lp
+        import labpartner_uom as lp
         fit = lp.linfit.do_linear_fit([1, 2, 3], [4, 5, 6])
 
         Returns
@@ -117,12 +117,12 @@ class quadfit:
         Usage
         -----
         To use this software, run the following command:
-        import labpartner as lp
+        import labpartner_uom as lp
         fit = lp.quadfit.do_quadratic_fit(x, y, yerr=None, no_yerr=False)
 
         Example
         -------
-        import labpartner as lp
+        import labpartner_uom as lp
         fit = lp.quadfit.do_quadratic_fit([1, 2, 3], [4, 5, 6])
 
         Returns
@@ -200,12 +200,12 @@ class fit:
         Usage
         -----
         To use this software, run the following command:
-        import labpartner as lp
+        import labpartner_uom as lp
         fit = lp.fit.do_fit(x, y, func, p0, yerr=yerr)
 
         Example
         -------
-        import labpartner as lp
+        import labpartner_uom as lp
         fit = lp.fit.do_fit([1, 2, 3], [4, 5, 6], lambda x, a, b: a * x + b, [1, 1])
 
         Returns

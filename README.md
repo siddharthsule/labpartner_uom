@@ -1,6 +1,6 @@
 # LabPartner - A Tool for Undergraduate Physics Students
 
-[![PyPI package](https://img.shields.io/badge/pip%20install-labpartner-brightgreen)](https://pypi.org/project/labpartner/) [![version number](https://img.shields.io/pypi/v/example-pypi-package?color=green&label=version)](https://github.com/SiddharthSule/labpartner/releases) [![Actions Status](https://github.com/SiddharthSule/labpartner/workflows/Test/badge.svg)](https://github.com/SiddharthSule/labpartner/actions) [![License](https://img.shields.io/github/license/SiddharthSule/labpartner)](https://github.com/SiddharthSule/labpartner/blob/main/LICENSE)
+[![PyPI package](https://img.shields.io/badge/pip%20install-labpartner_uom-brightgreen)](https://pypi.org/project/labpartner_uom/) [![version number](https://img.shields.io/pypi/v/example-pypi-package?color=green&label=version)](https://github.com/SiddharthSule/labpartner_uom/releases) [![Actions Status](https://github.com/SiddharthSule/labpartner_uom/workflows/Test/badge.svg)](https://github.com/SiddharthSule/labpartner_uom/actions) [![License](https://img.shields.io/github/license/SiddharthSule/labpartner_uom)](https://github.com/SiddharthSule/labpartner_uom/blob/main/LICENSE)
 
 Struggling with Lab? Me too!
 
@@ -18,7 +18,7 @@ It is important to acknowledge that there are other very useful tools (OriginPro
 This should be working in a few weeks time. To install this package, simply type:
 
 ```bash
-pip install labpartner
+pip install labpartner_uom
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ The code is based on Numpy, Sympy and Matplotlib. Try to have your x, y and y er
 ### Error Propagation
 
 ```python
-import labpartner as lp
+import labpartner_uom as lp
 prop = lp.errorpropagator.propagate_error(func, vars)
 
 # Example
@@ -38,7 +38,7 @@ prop = lp.errorpropagator.propagate_error("A*x**2 + B*y + C", ["x", "y"])
 ### Function Fitting
 
 ```python
-import labpartner as lp
+import labpartner_uom as lp
 fit = lp.fit.do_fit(lp.fit.do_fit(x, y, func, p0=p0, yerr=yerr)
 
 # Example
@@ -49,7 +49,7 @@ fit = lp.fit.do_fit([1, 2, 3], [4, 5, 6], my_func, p0=[1, 1], yerr=[1, 1, 1])
 ### (OLD) Linear and Quadratic Fit
 
 ```python
-import labpartner as lp
+import labpartner_uom as lp
 fit = lp.linfit.do_linear_fit(x, y, yerr)
 fit = lp.quadfit.do_quadratic_fit(x, y, yerr)
 
@@ -62,7 +62,7 @@ fit = lp.quadfit.do_quadratic_fit([1, 2, 3], [4, 5, 6], [0.2, 0.2, 0.3])
 ### Plotting
 
 ```python
-import labpartner as lp
+import labpartner_uom as lp
 lp.plotter.plot(x, y, yerr=None, xlabel="x axis", ylabel="y axis", title=None, label="data", fit_type=None, figsize=(4, 3))
 
 # Example

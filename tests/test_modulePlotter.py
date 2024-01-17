@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 import os
-from labpartner.modulePlotter import plotter
+from labpartner_uom.modulePlotter import plotter
 import matplotlib.pyplot as plt
 from matplotlib.testing.decorators import check_figures_equal
 

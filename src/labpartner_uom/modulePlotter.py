@@ -74,12 +74,12 @@ class plotter:
         Usage
         -----
         To use this software, run the following command:
-        import labpartner as lp
+        import labpartner_uom as lp
         lp.plotter.plot(x, y, yerr, xlabel="x axis", ylabel="y axis", title=None, label="data", fit=None, figsize=(4, 3))
 
         Example
         -------
-        import labpartner as lp
+        import labpartner_uom as lp
         lp.plotter.plot([1, 2, 3], [4, 5, 6], [0.2, 0.2, 0.3])
 
         Returns
