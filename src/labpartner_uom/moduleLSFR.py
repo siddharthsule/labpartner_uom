@@ -158,7 +158,7 @@ class fit:
             yerr = np.ones(len(y))
 
         # Extract parameter names from func_text
-        params = re.findall(r'\b[a-z]\b', func_text)
+        params = re.findall(r'\b[a-zA-Z]\b', func_text)
 
         # Remove 'x' from params if it's there
         params = [p for p in params if p != 'x']

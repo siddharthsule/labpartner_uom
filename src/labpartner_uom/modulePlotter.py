@@ -39,7 +39,7 @@ class plotter:
             # Duplicate code, should really remove
 
             # Extract parameter names from func_text
-            params = re.findall(r'\b[a-z]\b', fit_type)
+            params = re.findall(r'\b[a-zA-Z]\b', fit_type)
 
             # Remove 'x' from params if it's there
             params = [p for p in params if p != 'x']
