@@ -19,13 +19,13 @@ class plotter:
 
         if fit_type == "lin":
 
-            fit = linfit.do_linear_fit(x, y, yerr)
-            ax.plot(x, fit[0]*x + fit[2], label='Linear Fit')
+            plot_fit = linfit.do_linear_fit(x, y, yerr)
+            ax.plot(x, plot_fit[0]*x + plot_fit[2], label='Linear Fit')
 
         elif fit_type == "quad":
 
-            fit = linfit.do_quadratic_fit(x, y, yerr)
-            ax.plot(x, fit[0]*x**2 + fit[2]*x + fit[4], label='Quadratic Fit')
+            plot_fit = linfit.do_quadratic_fit(x, y, yerr)
+            ax.plot(x, plot_fit[0]*x**2 + plot_fit[2]*x + plot_fit[4], label='Quadratic Fit')
 
         elif fit_type == None:
 
@@ -67,9 +67,6 @@ class plotter:
             print("Reduced Chi-Squared = " + fit_res[2])
             print("----------------------------------------")
 
-
-
-
         ax.legend(loc='best')
 
         fig.tight_layout()
@@ -90,7 +87,7 @@ class plotter:
         -----
         To use this software, run the following command:
         import labpartner_uom as lp
-        lp.plotter.plot(x, y, yerr, xlabel="x axis", ylabel="y axis", title=None, label="data", fit=None, figsize=(4, 3))
+        lp.plotter.plot(x, y, yerr, xlabel="x axis", ylabel="y axis", title=None, label="data", fit_type=None, figsize=(4, 3))
 
         Example
         -------
