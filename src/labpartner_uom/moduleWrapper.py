@@ -1,4 +1,5 @@
 from .modulePlotter import *
+import numpy as np
 
 def analyse(x, y, yerr, fit=None, *args, **kwargs):
 
@@ -23,3 +24,14 @@ def analyse(x, y, yerr, fit=None, *args, **kwargs):
 
     # Call the original plot function with all arguments passed to the wrapper
     plotter.plot(x, y, yerr, fit_type=fit_type, *args, **kwargs)
+
+def analyse_from_file(filename, fit, *args, **kwargs):
+
+    # Load the data from the file
+    data = np.loadtxt(filename, delimiter=",")
+
+    if data.shape[1] < 3:
+        raise ValueError("The data file must have at least 3 columns. Make sure the columns are separated by commas.")
+
+    # Call the original plot function with all arguments passed to the wrapper
+    plotter.plot(data[:,0], data[:,1], data[:,2], fit_type=fit, *args, **kwargs)
