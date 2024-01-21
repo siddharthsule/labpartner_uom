@@ -7,8 +7,8 @@ Struggling with Lab? Me too!
 Over the course of my undergraduate studies at the University of Manchester, UK, I had three years of lab. Now, as someone who teaches those labs alongside my PhD, I thought it would be useful to automate some of the more painful parts of lab, so the students can just focus on understanding the physics and assessing their results.
 
 This Python is Package can:
-- Apply ~Linear and Quadratic~ ANY fit to Data, and Plot Results
-- Propagate Errors for any Function
+- Apply ~Linear and Quadratic~ **ANY** fit to Data, and Plot Results
+- Propagate Errors for all functions
 
 It is important to acknowledge that there are other similar, very useful tools (OriginPro, LSFR, your own code). I just wanted to try making something that works as an all-in-one system, effectively acting as a Lab Partner!
 
@@ -29,12 +29,24 @@ There are a few presets which allow you to auto-analyse your results.
 
 ```python
 import labpartner_uom as lp
+
+# For data arrays
 lp.analyse(x, y, yerr, fit="Linear")
+
+# For data in .csv files
+lp.analyse_from_file(filename, fit="Linear")
+
+# Example with specific labels
+lp.analyse(t, d, derr, fit="Quadratic", xlabel="Time (s)", ylabel="Distance (s)")
 ```
 
 This should print the results of the fitting, as well save a .png and .pdf of the plot.
 
-Options of fits include: Linear, Quadratic, Gaussian, Exponential, Logarithmic, Sine, Cosine and more! You can also add your own functions to fit (see below for details)
+Options of fits include: Linear, Quadratic, Gaussian, Exponential, Logarithmic, Sine, Cosine and more! You can also add your own functions to fit:
+
+```python
+lp.analyse(x, y, yerr, fit="a * exp(b * x) * sin(c * x) + d")
+```
 
 ### Error Propagation
 
