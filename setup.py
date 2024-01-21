@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     url='https://github.com/SiddharthSule/labpartner_uom',
     project_urls={
-        'Documentation': 'https://github.com/SiddharthSule/labpartner_uom',
+        'Documentation': 'https://github.com/SiddharthSule/labpartner_uom/docs',
         'Bug Reports':
         'https://github.com/SiddharthSule/labpartner_uom/issues',
         'Source Code': 'https://github.com/SiddharthSule/labpartner_uom',
@@ -26,8 +26,8 @@ setuptools.setup(
         # see https://pypi.org/classifiers/
         'Development Status :: 5 - Production/Stable',
 
-        'Intended Audience :: Developers',
-        'Topic :: Software Development :: Build Tools',
+        'Intended Audience :: Students',
+        'Topic :: Scientific/Engineering :: Physics',
 
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.8',
