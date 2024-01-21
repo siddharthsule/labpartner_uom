@@ -39,7 +39,7 @@ setuptools.setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.8',
-    # install_requires=['Pillow'],
+    install_requires=["numpy", "sympy", "scipy", "matplotlib", "pandas"],
     extras_require={
         'dev': ['check-manifest'],
         # 'test': ['coverage'],
@@ -47,7 +47,7 @@ setuptools.setup(
     # entry_points={
     #     'console_scripts': [  # This can provide executable scripts
     #         'run=labpartner_uom:main',
-    # You can execute `run` in bash to run `main()` in src/labpartner_uom/__init__.py
+    # You can execuyerr=te `run` in bash to run `main()` in src/labpartner_uom/__init__.py
     #     ],
     # },
 )

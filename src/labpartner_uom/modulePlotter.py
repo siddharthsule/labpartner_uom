@@ -5,7 +5,7 @@ from .moduleLSFR import *
 class plotter:
 
     @staticmethod
-    def plot(x, y, yerr, xlabel="x axis", ylabel="y axis", title=None, label="data", fit_type=None, p0=None, figsize=(4, 3)):
+    def plot(x, y, yerr, xlabel="x axis", ylabel="y axis", title=None, label="data", fit_type=None, p0=None, figsize=(6, 4), outfilename="myplot"):
 
         rcs = 0
         fig, ax = plt.subplots(1, 1, figsize=figsize)
@@ -70,9 +70,9 @@ class plotter:
         ax.legend(loc='best')
 
         fig.tight_layout()
-        fig.savefig('myplot.png', dpi=300)
-        fig.savefig('myplot.pdf')
-        print("Plot saved as myplot.png and myplot.pdf!")
+        fig.savefig(outfilename + '.png', dpi=300)
+        fig.savefig(outfilename + '.pdf', dpi=300)
+        print("Plot saved as "  + outfilename + ".png and " + outfilename + ".pdf")
         print("----------------------------------------")
 
     @staticmethod
