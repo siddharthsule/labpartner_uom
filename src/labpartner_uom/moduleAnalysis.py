@@ -43,7 +43,7 @@ class analysis:
         chi_squared = self.calculate_chi_squared()
         return chi_squared / (len(self.x) - len(self.popt))
 
-    def do_fit(self, predictions=None, bounds=None):
+    def do_fit(self, predictions, bounds):
 
         # Extract parameter names from func_text
         params = re.findall(r'\b[a-zA-Z]\b', self.func_text)
@@ -103,11 +103,10 @@ class analysis:
             fig.savefig(f"{outfilename}.png", dpi=300)
             fig.savefig(f"{outfilename}.pdf", dpi=300)
 
-    def make_plot(self, xlabel="x axis", ylabel="y axis", title=None,
-                  label="data", figsize=(6, 4), outfilename="myplot",
-                  *args, **kwargs):
+    def make_plot(self, xlabel, ylabel, title,
+                  label, figsize, outfilename):
 
-        fig, ax = plt.subplots(1, 1, figsize=figsize, *args, **kwargs)
+        fig, ax = plt.subplots(1, 1, figsize=figsize)
 
         ax.errorbar(self.x, self.y, yerr=self.yerr,
                     fmt='.', capsize=2, label=label)
@@ -177,8 +176,16 @@ def analyse(x, y, yerr, fit, *args, **kwargs):
     # Perform the fit
     a.do_fit(predictions=predictions, bounds=bounds)
 
+    # Extract plot arguments from kwargs
+    xlabel = kwargs.pop('xlabel', "x axis")
+    ylabel = kwargs.pop('ylabel', "y axis")
+    title = kwargs.pop('title', None)
+    label = kwargs.pop('label', "data")
+    figsize = kwargs.pop('figsize', (6, 4))
+    outfilename = kwargs.pop('outfilename', "myplot")
+
     # Make the plot
-    a.make_plot(*args, **kwargs)
+    a.make_plot(xlabel, ylabel, title, label, figsize, outfilename)
 
     # Give the output
     a.give_output()
