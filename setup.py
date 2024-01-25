@@ -26,7 +26,7 @@ setuptools.setup(
         # see https://pypi.org/classifiers/
         'Development Status :: 5 - Production/Stable',
 
-        'Intended Audience :: Students',
+        'Intended Audience :: Education',
         'Topic :: Scientific/Engineering :: Physics',
 
         'Programming Language :: Python :: 3',
@@ -35,7 +35,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3 :: Only',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.8',
