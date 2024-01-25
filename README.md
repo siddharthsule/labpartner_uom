@@ -30,14 +30,11 @@ There are a few presets which allow you to auto-analyse your results.
 ```python
 import labpartner_uom as lp
 
-# For data arrays
-lp.analyse(x, y, yerr, fit="Linear")
-
-# For data in .csv files
-lp.analyse_from_file(filename, fit="Linear")
+lp.analyse(x, y, yerr, fit) # For data arrays
+lp.analyse_from_file(filename, fit) # For data in .csv files
 
 # Example with specific labels
-lp.analyse(t, d, derr, fit="Quadratic", xlabel="Time (s)", ylabel="Distance (s)")
+lp.analyse(t, d, derr, "Quadratic", xlabel="Time (s)", ylabel="Distance (s)")
 ```
 
 This should print the results of the fitting, as well save a .png and .pdf of the plot.
@@ -45,7 +42,7 @@ This should print the results of the fitting, as well save a .png and .pdf of th
 Options of fits include: Linear, Quadratic, Gaussian, Exponential, Logarithmic, Sine, Cosine and more! You can also add your own functions to fit:
 
 ```python
-lp.analyse(x, y, yerr, fit="a * exp(b * x) * sin(c * x) + d")
+lp.analyse(x, y, yerr, "a * exp(b * x) * sin(c * x) + d")
 ```
 
 ### Error Propagation
