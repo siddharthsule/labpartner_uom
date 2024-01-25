@@ -61,7 +61,7 @@ prop = lp.errorpropagator.propagate_error("A*x**2 + B*y + C", ["x", "y"])
 
 I have given some full examples on how to use the code for a lab experiment. The first example contains a simple analysis, while the other is for free and forced oscillations, a lab I demonstrated.
 
-You can find these examples [here](docs/examples/)
+You can find these examples [here](https://github.com/SiddharthSule/labpartner_uom/docs/examples/)
 
 ### Advanced Usage
 
@@ -69,7 +69,7 @@ The guide above gives you a quick result. However, there is more for advanced us
 - Customisation of Plots
 - Fitting without Errors
 
-You can find more details on this in [more-stuff.md](docs/extended/more-stuff.md)
+You can find more details on this in [more-stuff.md](https://github.com/SiddharthSule/labpartner_uom/docs/extended/more-stuff.md)
 
 
 ---
