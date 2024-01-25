@@ -75,7 +75,7 @@ class analysis:
                                     sigma=self.yerr,
                                     p0=predictions,
                                     bounds=bounds,
-                                    max_nfev=10000,
+                                    maxfev=10000,
                                     absolute_sigma=True)
 
         # Get errors from pcov
