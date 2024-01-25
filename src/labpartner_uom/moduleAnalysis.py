@@ -43,7 +43,7 @@ class analysis:
         chi_squared = self.calculate_chi_squared()
         return chi_squared / (len(self.x) - len(self.popt))
 
-    def do_fit(self, predictions=None, bounds=None, *args, **kwargs):
+    def do_fit(self, predictions=None, bounds=None):
 
         # Extract parameter names from func_text
         params = re.findall(r'\b[a-zA-Z]\b', self.func_text)
@@ -170,8 +170,12 @@ def analyse(x, y, yerr, fit, *args, **kwargs):
     # Create an analysis object
     a = analysis(x, y, yerr, fit_type)
 
+    # Extract predictions and bounds from kwargs
+    predictions = kwargs.pop('predictions', None)
+    bounds = kwargs.pop('bounds', None)
+
     # Perform the fit
-    a.do_fit(*args, **kwargs)
+    a.do_fit(predictions=predictions, bounds=bounds)
 
     # Make the plot
     a.make_plot(*args, **kwargs)
