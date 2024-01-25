@@ -9,11 +9,11 @@ class TestAnalyse(unittest.TestCase):
     @patch('labpartner_uom.moduleAnalysis.analysis')
     def test_analyse(self, mock_plot):
         # Test with fit="Linear"
-        lp.analyse([1, 2, 3], [1, 2, 3], [0.1, 0.2, 0.3], fit="Linear")
+        lp.analyse([1, 2, 3], [1, 2, 3], [0.1, 0.2, 0.3], "Linear")
         mock_plot.assert_called_with([1, 2, 3], [1, 2, 3], [0.1, 0.2, 0.3], "A*x + B")
 
         # Test with fit="Quadratic"
-        lp.analyse([1, 2, 3], [1, 2, 3], [0.1, 0.2, 0.3], fit="Quadratic")
+        lp.analyse([1, 2, 3], [1, 2, 3], [0.1, 0.2, 0.3], "Quadratic")
         mock_plot.assert_called_with([1, 2, 3], [1, 2, 3], [0.1, 0.2, 0.3], "A*x**2 + B*x + C")
 
         # Add more tests as needed for other fit types and edge cases
