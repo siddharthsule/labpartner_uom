@@ -75,8 +75,7 @@ class analysis:
                                     sigma=self.yerr,
                                     p0=predictions,
                                     bounds=bounds,
-                                    maxfev=10000,
-                                    absolute_sigma=True)
+                                    maxfev=10000)
 
         # Get errors from pcov
         self.perr = np.sqrt(np.diag(pcov))
@@ -105,9 +104,10 @@ class analysis:
             fig.savefig(f"{outfilename}.pdf", dpi=300)
 
     def make_plot(self, xlabel="x axis", ylabel="y axis", title=None,
-                  label="data", figsize=(6, 4), outfilename="myplot"):
+                  label="data", figsize=(6, 4), outfilename="myplot",
+                  *args, **kwargs):
 
-        fig, ax = plt.subplots(1, 1, figsize=figsize)
+        fig, ax = plt.subplots(1, 1, figsize=figsize, *args, **kwargs)
 
         ax.errorbar(self.x, self.y, yerr=self.yerr,
                     fmt='.', capsize=2, label=label)
