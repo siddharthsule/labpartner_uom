@@ -73,7 +73,10 @@ class analysis:
         self.popt, pcov = curve_fit(self.func_wrapper,
                                     self.x, self.y,
                                     sigma=self.yerr,
-                                    p0=predictions, bounds=bounds)
+                                    p0=predictions,
+                                    bounds=bounds,
+                                    max_nfev=10000,
+                                    absolute_sigma=True)
 
         # Get errors from pcov
         self.perr = np.sqrt(np.diag(pcov))
