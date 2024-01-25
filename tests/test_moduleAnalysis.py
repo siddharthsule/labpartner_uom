@@ -24,12 +24,13 @@ class TestFit(unittest.TestCase):
         my_func = "a * sin(x) + b"
         x = [1, 2, 3]
         y = [4, 5, 6]
-        p0 = [1, 1]
+        p = [1, 1]
+        b = ([-np.inf, -np.inf], [np.inf, np.inf])
         yerr = [1, 1, 1]
         expected_result = [np.array([-1.93611801,  6.22097308]), np.array([1.33433151, 0.96059825]), 0.6440378595120685]
 
         a = lp.analysis(x, y, yerr, my_func)
-        a.do_fit(predictions=p0)
+        a.do_fit(p, b)
 
         result = [a.popt, a.perr, a.rcs]
 
