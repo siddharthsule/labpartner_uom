@@ -43,7 +43,7 @@ class analysis:
         chi_squared = self.calculate_chi_squared()
         return chi_squared / (len(self.x) - len(self.popt))
 
-    def do_fit(self, predictions=None, bounds=None):
+    def do_fit(self, predictions=None, bounds=None, *args, **kwargs):
 
         # Extract parameter names from func_text
         params = re.findall(r'\b[a-zA-Z]\b', self.func_text)
